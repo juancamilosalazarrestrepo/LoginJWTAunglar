@@ -1,0 +1,10 @@
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Username</label>
+    <input [(ngModel)]="users.userName" type="text" class="form-control">
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">password</label>
+    <input [(ngModel)]="users.pass" type="password" class="form-control">
+</div>
+
+<button class="btn btn-primary" (click)="logIn()">Ingresar</button>
