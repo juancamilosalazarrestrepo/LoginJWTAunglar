@@ -23,14 +23,15 @@ export class RoleGuard implements CanActivate {
 
     decodetoken = decode(token);
 
-    console.log(decodetoken.userName);
+    console.log(decodetoken.roleId);
 
-    if (this.authService.isAuth() || decodetoken.roleId != expectedRole) {
+    if (decodetoken.roleId != expectedRole) {
       console.log('usuario no autorizado para la visita');
       this.router.navigate(['login']);
       return false;
+    } else {
+      return true;
     }
-    return true;
   }
 
 }
